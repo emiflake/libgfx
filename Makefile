@@ -6,7 +6,7 @@
 #    By: nmartins <nmartins@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/04/18 20:11:18 by nmartins       #+#    #+#                 #
-#    Updated: 2019/05/02 20:02:47 by nmartins      ########   odam.nl          #
+#    Updated: 2019/05/02 23:24:54 by nmartins      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ OBJECT_NAMES=	\
 				gfx_window \
 				gfx_point \
 				gfx_vec2 \
+				gfx_vec3 \
 				gfx_dimensions \
 
 # do not configure
