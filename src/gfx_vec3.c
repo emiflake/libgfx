@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/02 19:10:30 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/05 13:56:23 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/05/05 14:29:18 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,15 @@ t_vec3	sub_vec3(t_vec3 a, t_vec3 b)
 	n.x = a.x - b.x;
 	n.y = a.y - b.y;
 	n.z = a.z - b.z;
+	return (n);
+}
+
+t_vec3	negate_vec3(t_vec3 a)
+{
+	t_vec3 n;
+
+	n.x = -a.x;
+	n.y = -a.y;
+	n.z = -a.z;
 	return (n);
 }
