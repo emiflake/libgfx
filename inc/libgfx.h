@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:57:14 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/01 18:31:31 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/05/05 13:50:03 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@
 # include "gfx_fps_counter.h"
 # include "gfx_lines.h"
 # include "gfx_window.h"
+# include "gfx_projection.h"
 
 #endif

@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   gfx_vec3.c                                         :+:    :+:            */
+/*   gfx_projection.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/05/02 19:10:30 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/05 13:56:23 by nmartins      ########   odam.nl         */
+/*   Created: 2019/05/05 13:39:28 by nmartins       #+#    #+#                */
+/*   Updated: 2019/05/05 13:48:46 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libgfx.h>
+#include "gfx_projection.h"
+#include <math.h>
 
-t_vec3	mk_vec3(double x, double y, double z)
+t_vec3	gfx_rotation_x(t_vec3 v, double theta)
 {
-	t_vec3 v;
+	t_vec3 after_rot;
 
-	v.x = x;
-	v.y = y;
-	v.z = z;
-	return (v);
-}
-
-t_vec3	add_vec3(t_vec3 a, t_vec3 b)
-{
-	t_vec3 n;
-
-	n.x = a.x + b.x;
-	n.y = a.y + b.y;
-	n.z = a.z + b.z;
-	return (n);
-}
-
-t_vec3	sub_vec3(t_vec3 a, t_vec3 b)
-{
-	t_vec3 n;
-
-	n.x = a.x - b.x;
-	n.y = a.y - b.y;
-	n.z = a.z - b.z;
-	return (n);
+	after_rot.x = v.x;
+	after_rot.y = cos(theta) * v.y + sin(theta) * v.z;
+	after_rot.z = -sin(theta) * v.y + cos(theta) * v.z;
+	return (after_rot);
 }
