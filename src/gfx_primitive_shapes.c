@@ -6,12 +6,14 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:58:33 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/05 15:49:49 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/05/06 16:21:24 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libgfx.h>
 #include <libft.h>
+# include <assert.h>
+# include <stdio.h>
 
 inline void	gfx_blit_pixel(
 	t_gfx_state *st,
@@ -22,6 +24,8 @@ inline void	gfx_blit_pixel(
 	int loc;
 
 	(void)st;
+	if (p.x >= img->dim.width || p.y >= img->dim.height || p.x < 0 || p.y < 0)
+		return ;
 	loc = (p.x + p.y * img->dim.width) * img->bits_per_pixel / 8;
 	img->data_addr[loc + 3] = color >> 24;
 	img->data_addr[loc + 2] = color >> 16;
