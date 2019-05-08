@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:57:04 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/05 14:29:33 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/05/08 15:24:35 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ t_vec3			mk_vec3(double x, double y, double z);
 t_vec3			add_vec3(t_vec3 a, t_vec3 b);
 t_vec3			sub_vec3(t_vec3 a, t_vec3 b);
 t_vec3			negate_vec3(t_vec3 a);
+
+typedef double	t_matrix[3][3];
 
 #endif

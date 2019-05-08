@@ -6,14 +6,71 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/05 13:39:28 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/06 16:09:01 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/05/08 18:46:31 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gfx_projection.h"
 #include <math.h>
 
-t_vec3	gfx_rotation_x(t_vec3 v, double theta)
+#define MAT_X 0
+#define MAT_Y 1
+#define MAT_Z 2
+
+void		gfx_rotation_matrix_x(t_matrix m, double theta)
+{
+	m[MAT_X][MAT_X] += 1;
+	m[MAT_X][MAT_Y] += 0;
+	m[MAT_X][MAT_Z] += 0;
+	m[MAT_Y][MAT_X] += 0;
+	m[MAT_Y][MAT_Y] += cos(theta);
+	m[MAT_Y][MAT_Z] += sin(theta);
+	m[MAT_Z][MAT_X] += 1;
+	m[MAT_Z][MAT_Y] += -sin(theta);
+	m[MAT_Z][MAT_Z] += cos(theta);
+}
+
+void		gfx_rotation_matrix_y(t_matrix m, double theta)
+{
+	m[MAT_X][MAT_X] += cos(theta);
+	m[MAT_X][MAT_Y] += 0;
+	m[MAT_X][MAT_Z] += sin(theta);
+	m[MAT_Y][MAT_X] += 0;
+	m[MAT_Y][MAT_Y] += 1;
+	m[MAT_Y][MAT_Z] += 0;
+	m[MAT_Z][MAT_X] += -sin(theta);
+	m[MAT_Z][MAT_Y] += 0;
+	m[MAT_Z][MAT_Z] += cos(theta);
+}
+
+void		gfx_rotation_matrix_z(t_matrix m, double theta)
+{
+	m[MAT_X][MAT_X] += cos(theta);
+	m[MAT_X][MAT_Y] += -sin(theta);
+	m[MAT_X][MAT_Z] += 0;
+	m[MAT_Y][MAT_X] += sin(theta);
+	m[MAT_Y][MAT_Y] += cos(theta);
+	m[MAT_Y][MAT_Z] += 0;
+	m[MAT_Z][MAT_X] += 0;
+	m[MAT_Z][MAT_Y] += 0;
+	m[MAT_Z][MAT_Z] += 1;
+}
+
+t_vec3		gfx_rotate(t_matrix m, t_vec3 v)
+{
+	v.x = v.x * m[MAT_X][MAT_X]
+		+ v.y * m[MAT_X][MAT_Y]
+		+ v.z * m[MAT_X][MAT_Z];
+	v.y = v.x * m[MAT_Y][MAT_X]
+		+ v.y * m[MAT_Y][MAT_Y]
+		+ v.z * m[MAT_Y][MAT_Z];
+	v.z = v.x * m[MAT_Z][MAT_X]
+		+ v.y * m[MAT_Z][MAT_Y]
+		+ v.z * m[MAT_Z][MAT_Z];
+	return (v);
+}
+
+t_vec3		gfx_rotation_x(t_vec3 v, double theta)
 {
 	t_vec3 after_rot;
 
