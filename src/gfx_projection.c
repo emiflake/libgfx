@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/05 13:39:28 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/08 18:46:31 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/03 18:18:00 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		gfx_rotation_matrix_x(t_matrix m, double theta)
 	m[MAT_Y][MAT_X] += 0;
 	m[MAT_Y][MAT_Y] += cos(theta);
 	m[MAT_Y][MAT_Z] += sin(theta);
-	m[MAT_Z][MAT_X] += 1;
+	m[MAT_Z][MAT_X] += 0;
 	m[MAT_Z][MAT_Y] += -sin(theta);
 	m[MAT_Z][MAT_Z] += cos(theta);
 }
@@ -58,16 +58,18 @@ void		gfx_rotation_matrix_z(t_matrix m, double theta)
 
 t_vec3		gfx_rotate(t_matrix m, t_vec3 v)
 {
-	v.x = v.x * m[MAT_X][MAT_X]
+	t_vec3 n;
+
+	n.x = v.x * m[MAT_X][MAT_X]
 		+ v.y * m[MAT_X][MAT_Y]
 		+ v.z * m[MAT_X][MAT_Z];
-	v.y = v.x * m[MAT_Y][MAT_X]
+	n.y = v.x * m[MAT_Y][MAT_X]
 		+ v.y * m[MAT_Y][MAT_Y]
 		+ v.z * m[MAT_Y][MAT_Z];
-	v.z = v.x * m[MAT_Z][MAT_X]
+	n.z = v.x * m[MAT_Z][MAT_X]
 		+ v.y * m[MAT_Z][MAT_Y]
 		+ v.z * m[MAT_Z][MAT_Z];
-	return (v);
+	return (n);
 }
 
 t_vec3		gfx_rotation_x(t_vec3 v, double theta)
