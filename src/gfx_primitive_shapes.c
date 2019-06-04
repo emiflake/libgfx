@@ -6,14 +6,12 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:58:33 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/06 16:21:24 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/03 19:02:51 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libgfx.h>
 #include <libft.h>
-# include <assert.h>
-# include <stdio.h>
 
 inline void	gfx_blit_pixel(
 	t_gfx_state *st,

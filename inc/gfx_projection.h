@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/05 13:37:11 by nmartins       #+#    #+#                */
-/*   Updated: 2019/06/03 18:17:45 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/03 19:03:15 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ t_vec3	gfx_rotation_z(t_vec3 v, double theta);
 /*
 ** The same as above, but all at once
 */
-t_vec3 gfx_rotation(t_vec3 v, t_vec3 thetas);
+t_vec3	gfx_rotation(t_vec3 v, t_vec3 thetas);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:57:10 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/02 20:24:45 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/04 13:32:52 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct	s_gfx_state
 	t_key_state				key_state;
 	t_gfx_mouse				mouse_state;
 	t_dimensions			dimensions;
+	int						(*user_free)(struct s_gfx_state *st);
 	struct s_gfx_image		*buffer;
 }				t_gfx_state;
 

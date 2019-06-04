@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:58:46 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/01 19:23:07 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/04 13:35:45 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ int		gfx_free_state(
 {
 	gfx_free_image(st, &st->buffer);
 	mlx_destroy_window(st->mlx_ptr, st->win_ptr);
+	if (st->user_free)
+		st->user_free(st);
 	return (0);
 }

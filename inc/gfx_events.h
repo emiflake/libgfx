@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:56:54 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/02 20:27:56 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/04 13:30:50 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_hooks
 	int	(*mousemove)(int x, int y, t_gfx_state *state);
 	int	(*expose)(t_gfx_state *state);
 	int	(*close)(t_gfx_state *state);
+	int	(*free)(t_gfx_state *state);
 }				t_hooks;
 
 void			gfx_register_hooks(t_gfx_state *st, t_hooks hooks);

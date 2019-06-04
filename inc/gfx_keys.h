@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:56:56 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/02 20:28:49 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/03 18:49:25 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@
 # define KC_END 119
 # define KC_PAGEUP 116
 # define KC_PAGEDOWN 121
+# define KC_SPACE 49
 
 /*
 ** arrow keys

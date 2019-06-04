@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 00:56:43 by nmartins       #+#    #+#                */
-/*   Updated: 2019/04/30 14:25:04 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/04 13:30:21 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ void		gfx_register_hooks(t_gfx_state *st, t_hooks hooks)
 	gfx_register_hook_safe(st, EVT_MOUSEMOVE, hooks.mousemove);
 	gfx_register_hook_safe(st, EVT_EXPOSE, hooks.expose);
 	gfx_register_hook_safe(st, EVT_CLOSE, hooks.close);
+	if (hooks.free)
+		st->user_free = hooks.free;
 }
