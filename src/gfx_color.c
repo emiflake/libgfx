@@ -6,7 +6,7 @@
 /*   By: nmartins <nmartins@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/30 13:06:10 by nmartins       #+#    #+#                */
-/*   Updated: 2019/05/02 18:30:36 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/06/24 23:16:45 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_rgb	mk_rgb(int r, int g, int b)
 	return (rgb);
 }
 
-t_hsl	mk_hsl(int h, double s, double l)
+t_hsl	mk_hsl(double h, double s, double l)
 {
 	t_hsl hsl;
 
